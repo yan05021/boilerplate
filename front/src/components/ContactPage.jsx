@@ -1,15 +1,26 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function ContactPage() {
+    //poster les données du formulaire
+    const addContact = (data) => {
+        console.log(data);
+        axios.post("http://127.0.0.1:8000/form", data).catch((error) => {
+            console.error(error);
+        });
+
+        console.log(data);
+    };
+
     const {
         register,
         handleSubmit,
-        formState: { errors, isValid },
+        formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+    // const onSubmit = (data) => {
+    //     console.log(data);
+    // };
 
     return (
         <>
@@ -52,7 +63,7 @@ function ContactPage() {
 
                 <form
                     className="ContactPage-form"
-                    onSubmit={handleSubmit(onSubmit)}
+                    onSubmit={handleSubmit((data) => addContact(data))}
                 >
                     <p>Contact</p>
 
@@ -62,7 +73,7 @@ function ContactPage() {
                         <input
                             type="text"
                             className="ContactPage-form-input"
-                            {...register("lastname", {
+                            {...register("lastName", {
                                 required: "Ce champ est requis",
                                 pattern: {
                                     value: /^[A-Za-zÀ-ÿ ]+$/i,
@@ -74,9 +85,9 @@ function ContactPage() {
                         />
                     </div>
                     {/* Affichage des erreurs pour le champ lastname */}
-                    {errors.lastname && (
+                    {errors.lastName && (
                         <span className="ContactForm-error">
-                            {errors.lastname.message}
+                            {errors.lastName.message}
                         </span>
                     )}
 
@@ -86,7 +97,7 @@ function ContactPage() {
                         <input
                             type="text"
                             className="ContactPage-form-input"
-                            {...register("firstname", {
+                            {...register("firstName", {
                                 required: "Ce champ est requis",
                                 pattern: {
                                     value: /^[A-Za-zÀ-ÿ ]+$/i,
@@ -98,9 +109,9 @@ function ContactPage() {
                         />
                     </div>
                     {/* Affichage des erreurs pour le champ firstname */}
-                    {errors.firstname && (
+                    {errors.firstName && (
                         <span className="ContactForm-error">
-                            {errors.firstname.message}
+                            {errors.firstName.message}
                         </span>
                     )}
 
@@ -110,7 +121,7 @@ function ContactPage() {
                         <input
                             type="text"
                             className="ContactPage-form-input"
-                            {...register("jobtitle", {
+                            {...register("job", {
                                 required: "Ce champ est requis",
                                 pattern: {
                                     value: /^[A-Za-zÀ-ÿ ]+$/i,
@@ -122,9 +133,9 @@ function ContactPage() {
                         />
                     </div>
                     {/* Affichage des erreurs pour le champ jobtitle */}
-                    {errors.jobtitle && (
+                    {errors.job && (
                         <span className="ContactForm-error">
-                            {errors.jobtitle.message}
+                            {errors.job.message}
                         </span>
                     )}
 
@@ -158,7 +169,7 @@ function ContactPage() {
                         <input
                             type="text"
                             className="ContactPage-form-input"
-                            {...register("phonenumber", {
+                            {...register("phoneNumbers", {
                                 required: "Ce champ est requis",
                                 pattern: {
                                     value: /^(0|\+33)?[1-9][0-9]{8}$/,
@@ -170,9 +181,9 @@ function ContactPage() {
                         />
                     </div>
                     {/* Affichage des erreurs pour le champ phonenumber */}
-                    {errors.phonenumber && (
+                    {errors.phoneNumbers && (
                         <span className="ContactForm-error">
-                            {errors.phonenumber.message}
+                            {errors.phoneNumbers.message}
                         </span>
                     )}
 
