@@ -24,6 +24,28 @@ body {
     padding: 24px;
     background-color: #fff;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15%;
     border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactPage-info-caution {
+    background-color: #eeeffe;
+    display: flex;
+    gap: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    color: var(--primary-blue-impact, #505fee);
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    #text-date {
+        padding-top: 10px;
+        span {
+            font-weight: 600;
+        }
+    }
 }

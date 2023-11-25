@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import circleIcon from "../../src/circle-info.svg";
 
 function ContactPage() {
     //poster les données du formulaire
@@ -27,16 +28,23 @@ function ContactPage() {
             <div className="ContactPage">
                 <div className="ContactPage-info">
                     <div className="ContactPage-info-caution">
-                        <p>
-                            La mise à jour des données est un dialogue entre
-                            votre entreprise et OpenClimat qui vérifie les
-                            données. Aucune information soumise dans ce
-                            formulaire ne sera publiée sans discussion
-                            préalable.
-                        </p>
-                        <p>
-                            Prochaine analyse: <span>Décembre 2023</span>
-                        </p>
+                        <img
+                            className="circleIcon"
+                            src={circleIcon}
+                            alt="une circle de l'information"
+                        />
+                        <div className="ContactPage-info-caution-text">
+                            <p>
+                                La mise à jour des données est un dialogue entre
+                                votre entreprise et OpenClimat qui vérifie les
+                                données. Aucune information soumise dans ce
+                                formulaire ne sera publiée sans discussion
+                                préalable.
+                            </p>
+                            <p id="text-date">
+                                Prochaine analyse: <span>Décembre 2023</span>
+                            </p>
+                        </div>
                     </div>
                     <div className="ContactPage-info-update">
                         <p>
