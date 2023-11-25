@@ -14,8 +14,8 @@ function ContactPage() {
     return (
         <>
             <div className="ContactPage">
-                <div className="ContactPage_info">
-                    <div className="ContactPage_info_caution">
+                <div className="ContactPage-info">
+                    <div className="ContactPage-info-caution">
                         <p>
                             La mise à jour des données est un dialogue entre
                             votre entreprise et OpenClimat qui vérifie les
@@ -27,7 +27,7 @@ function ContactPage() {
                             Prochaine analyse: <span>Décembre 2023</span>
                         </p>
                     </div>
-                    <div className="ContactPage_info_update">
+                    <div className="ContactPage-info-update">
                         <p>
                             Vous souhaitez demander une mise à jour de votre
                             page publique OpenClimat?
@@ -51,17 +51,17 @@ function ContactPage() {
                 </div>
 
                 <form
-                    className="ContactPage_form"
+                    className="ContactPage-form"
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <p>Contact</p>
 
                     {/* ContactPage_form_lastname */}
-                    <div className="ContactPage_form_lastname">
+                    <div className="ContactPage-form-lastname">
                         <label htmlFor="lastname">Nom</label>
                         <input
                             type="text"
-                            className="ContactPage_form_input"
+                            className="ContactPage-form-input"
                             {...register("lastname", {
                                 required: "Ce champ est requis",
                                 pattern: {
@@ -75,17 +75,17 @@ function ContactPage() {
                     </div>
                     {/* Affichage des erreurs pour le champ lastname */}
                     {errors.lastname && (
-                        <span className="ContactForm_error">
+                        <span className="ContactForm-error">
                             {errors.lastname.message}
                         </span>
                     )}
 
                     {/* ContactPage_form_firstname */}
-                    <div className="ContactPage_form_prenom">
+                    <div className="ContactPage-form-prenom">
                         <label htmlFor="firstname">Prénom</label>
                         <input
                             type="text"
-                            className="ContactPage_form_input"
+                            className="ContactPage-form-input"
                             {...register("firstname", {
                                 required: "Ce champ est requis",
                                 pattern: {
@@ -99,17 +99,17 @@ function ContactPage() {
                     </div>
                     {/* Affichage des erreurs pour le champ firstname */}
                     {errors.firstname && (
-                        <span className="ContactForm_error">
+                        <span className="ContactForm-error">
                             {errors.firstname.message}
                         </span>
                     )}
 
                     {/* ContactPage_form_jobtitle */}
-                    <div className="ContactPage_form_prenom">
+                    <div className="ContactPage-form-prenom">
                         <label htmlFor="jobtitle">Votre poste</label>
                         <input
                             type="text"
-                            className="ContactPage_form_input"
+                            className="ContactPage-form-input"
                             {...register("jobtitle", {
                                 required: "Ce champ est requis",
                                 pattern: {
@@ -123,17 +123,17 @@ function ContactPage() {
                     </div>
                     {/* Affichage des erreurs pour le champ jobtitle */}
                     {errors.jobtitle && (
-                        <span className="ContactForm_error">
+                        <span className="ContactForm-error">
                             {errors.jobtitle.message}
                         </span>
                     )}
 
                     {/* ContactPage_form_email */}
-                    <div className="ContactPage_form_email">
+                    <div className="ContactPage-form-email">
                         <label htmlFor="email">Adresse email</label>
                         <input
                             type="text"
-                            className="ContactPage_form_input"
+                            className="ContactPage-form-input"
                             {...register("email", {
                                 required: "Ce champ est requis",
                                 pattern: {
@@ -147,17 +147,17 @@ function ContactPage() {
                     </div>
                     {/* Affichage des erreurs pour le champ email */}
                     {errors.email && (
-                        <span className="ContactForm_error">
+                        <span className="ContactForm-error">
                             {errors.email.message}
                         </span>
                     )}
 
                     {/* ContactPage_form_phonenumber */}
-                    <div className="ContactPage_form_phonenumber">
+                    <div className="ContactPage-form-phonenumber">
                         <label htmlFor="phonenumber">Numéro de téléphone</label>
                         <input
                             type="text"
-                            className="ContactPage_form_input"
+                            className="ContactPage-form-input"
                             {...register("phonenumber", {
                                 required: "Ce champ est requis",
                                 pattern: {
@@ -171,12 +171,12 @@ function ContactPage() {
                     </div>
                     {/* Affichage des erreurs pour le champ phonenumber */}
                     {errors.phonenumber && (
-                        <span className="ContactForm_error">
+                        <span className="ContactForm-error">
                             {errors.phonenumber.message}
                         </span>
                     )}
 
-                    <button className="ContactPage_form_button" type="submit">
+                    <button className="ContactPage-form-button" type="submit">
                         Commencer
                     </button>
                 </form>

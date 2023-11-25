@@ -1,10 +1,11 @@
 import React from "react";
-import ContactPage from "./components/ContactPage";
+import "./styles/ContactPage.scss";
+import Router from "./Router";
 
 const App = () => {
     return (
         <>
-            <ContactPage />
+            <Router />
         </>
     );
 };
