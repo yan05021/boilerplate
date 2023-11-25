@@ -92,7 +92,7 @@ function ContactPage() {
                     )}
 
                     {/* ContactPage_form_firstname */}
-                    <div className="ContactPage-form-prenom">
+                    <div className="ContactPage-form-firstname">
                         <label htmlFor="firstname">Prénom</label>
                         <input
                             type="text"
@@ -116,7 +116,7 @@ function ContactPage() {
                     )}
 
                     {/* ContactPage_form_jobtitle */}
-                    <div className="ContactPage-form-prenom">
+                    <div className="ContactPage-form-lastname">
                         <label htmlFor="jobtitle">Votre poste</label>
                         <input
                             type="text"
