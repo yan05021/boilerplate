@@ -26,31 +26,31 @@ function ContactPage() {
     return (
         <>
             <div className="ContactPage">
-                <div className="ContactPage-info">
-                    <div className="ContactPage-info-caution">
-                        <img
-                            className="circleIcon"
-                            src={circleIcon}
-                            alt="une circle de l'information"
-                        />
-                        <div className="ContactPage-info-caution-text">
-                            <p>
-                                La mise à jour des données est un dialogue entre
-                                votre entreprise et OpenClimat qui vérifie les
-                                données. Aucune information soumise dans ce
-                                formulaire ne sera publiée sans discussion
-                                préalable.
-                            </p>
-                            <p id="text-date">
-                                Prochaine analyse: <span>Décembre 2023</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="ContactPage-info-update">
+                <div className="ContactPage-info-caution">
+                    <img
+                        className="circleIcon"
+                        src={circleIcon}
+                        alt="une circle de l'information"
+                    />
+                    <div className="ContactPage-info-caution-text">
                         <p>
-                            Vous souhaitez demander une mise à jour de votre
-                            page publique OpenClimat?
+                            La mise à jour des données est un dialogue entre
+                            votre entreprise et OpenClimat qui vérifie les
+                            données. Aucune information soumise dans ce
+                            formulaire ne sera publiée sans discussion
+                            préalable.
                         </p>
+                        <p id="text-date">
+                            Prochaine analyse: <span>Décembre 2023</span>
+                        </p>
+                    </div>
+                </div>
+                <div className="ContactPage-info-update">
+                    <span>
+                        Vous souhaitez demander une mise à jour de votre page
+                        publique OpenClimat?
+                    </span>
+                    <div className="update-elements">
                         <p>
                             Voici les éléments que vous pouvez mettre à jour
                             (tout ou parite)
@@ -68,132 +68,143 @@ function ContactPage() {
                         </ul>
                     </div>
                 </div>
-
+                <hr class="solid" />
                 <form
                     className="ContactPage-form"
                     onSubmit={handleSubmit((data) => addContact(data))}
                 >
-                    <p>Contact</p>
+                    <span>Contact</span>
+                    <div className="name-area">
+                        {/* ContactPage_form_lastname */}
+                        <div className="ContactPage-form-lastname">
+                            <label htmlFor="lastname">Nom</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="ContactPage-form-input"
+                                {...register("lastName", {
+                                    required: "Ce champ est requis",
+                                    pattern: {
+                                        value: /^[A-Za-zÀ-ÿ ]+$/i,
+                                        message:
+                                            "Caractères alphabétiques uniquement",
+                                    },
+                                })}
+                                placeholder="Nom ..."
+                            />
+                        </div>
+                        {/* Affichage des erreurs pour le champ lastname */}
+                        {errors.lastName && (
+                            <span className="ContactForm-error">
+                                {errors.lastName.message}
+                            </span>
+                        )}
 
-                    {/* ContactPage_form_lastname */}
-                    <div className="ContactPage-form-lastname">
-                        <label htmlFor="lastname">Nom</label>
-                        <input
-                            type="text"
-                            className="ContactPage-form-input"
-                            {...register("lastName", {
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^[A-Za-zÀ-ÿ ]+$/i,
-                                    message:
-                                        "Caractères alphabétiques uniquement",
-                                },
-                            })}
-                            placeholder="Nom ..."
-                        />
+                        {/* ContactPage_form_firstname */}
+                        <div className="ContactPage-form-firstname">
+                            <label htmlFor="firstname">Prénom</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="ContactPage-form-input"
+                                {...register("firstName", {
+                                    required: "Ce champ est requis",
+                                    pattern: {
+                                        value: /^[A-Za-zÀ-ÿ ]+$/i,
+                                        message:
+                                            "Caractères alphabétiques uniquement",
+                                    },
+                                })}
+                                placeholder="Prénom ..."
+                            />
+                        </div>
+                        {/* Affichage des erreurs pour le champ firstname */}
+                        {errors.firstName && (
+                            <span className="ContactForm-error">
+                                {errors.firstName.message}
+                            </span>
+                        )}
                     </div>
-                    {/* Affichage des erreurs pour le champ lastname */}
-                    {errors.lastName && (
-                        <span className="ContactForm-error">
-                            {errors.lastName.message}
-                        </span>
-                    )}
 
-                    {/* ContactPage_form_firstname */}
-                    <div className="ContactPage-form-firstname">
-                        <label htmlFor="firstname">Prénom</label>
-                        <input
-                            type="text"
-                            className="ContactPage-form-input"
-                            {...register("firstName", {
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^[A-Za-zÀ-ÿ ]+$/i,
-                                    message:
-                                        "Caractères alphabétiques uniquement",
-                                },
-                            })}
-                            placeholder="Prénom ..."
-                        />
+                    <div className="job-area">
+                        {/* ContactPage_form_jobtitle */}
+                        <div className="ContactPage-form-lastname">
+                            <label htmlFor="jobtitle">Votre poste</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="ContactPage-form-input"
+                                {...register("job", {
+                                    required: "Ce champ est requis",
+                                    pattern: {
+                                        value: /^[A-Za-zÀ-ÿ ]+$/i,
+                                        message:
+                                            "Caractères alphabétiques uniquement",
+                                    },
+                                })}
+                                placeholder="Intitulé poste ..."
+                            />
+                        </div>
+                        {/* Affichage des erreurs pour le champ jobtitle */}
+                        {errors.job && (
+                            <span className="ContactForm-error">
+                                {errors.job.message}
+                            </span>
+                        )}
                     </div>
-                    {/* Affichage des erreurs pour le champ firstname */}
-                    {errors.firstName && (
-                        <span className="ContactForm-error">
-                            {errors.firstName.message}
-                        </span>
-                    )}
+                    <div className="contact-options-area">
+                        {/* ContactPage_form_email */}
+                        <div className="ContactPage-form-email">
+                            <label htmlFor="email">Adresse email</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="ContactPage-form-input"
+                                {...register("email", {
+                                    required: "Ce champ est requis",
+                                    pattern: {
+                                        value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i,
+                                        message:
+                                            "Merci de renseigner un email valide",
+                                    },
+                                })}
+                                placeholder="Email"
+                            />
+                        </div>
+                        {/* Affichage des erreurs pour le champ email */}
+                        {errors.email && (
+                            <span className="ContactForm-error">
+                                {errors.email.message}
+                            </span>
+                        )}
 
-                    {/* ContactPage_form_jobtitle */}
-                    <div className="ContactPage-form-lastname">
-                        <label htmlFor="jobtitle">Votre poste</label>
-                        <input
-                            type="text"
-                            className="ContactPage-form-input"
-                            {...register("job", {
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^[A-Za-zÀ-ÿ ]+$/i,
-                                    message:
-                                        "Caractères alphabétiques uniquement",
-                                },
-                            })}
-                            placeholder="Intitulé poste ..."
-                        />
+                        {/* ContactPage_form_phonenumber */}
+                        <div className="ContactPage-form-phonenumber">
+                            <label htmlFor="phonenumber">
+                                Numéro de téléphone
+                            </label>
+                            <br />
+                            <input
+                                type="text"
+                                className="ContactPage-form-input"
+                                {...register("phoneNumbers", {
+                                    required: "Ce champ est requis",
+                                    pattern: {
+                                        value: /^(0|\+33)?[1-9][0-9]{8}$/,
+                                        message:
+                                            "Merci de renseigner un numéro de téléphone valide",
+                                    },
+                                })}
+                                placeholder="Numéro ..."
+                            />
+                        </div>
+                        {/* Affichage des erreurs pour le champ phonenumber */}
+                        {errors.phoneNumbers && (
+                            <span className="ContactForm-error">
+                                {errors.phoneNumbers.message}
+                            </span>
+                        )}
                     </div>
-                    {/* Affichage des erreurs pour le champ jobtitle */}
-                    {errors.job && (
-                        <span className="ContactForm-error">
-                            {errors.job.message}
-                        </span>
-                    )}
-
-                    {/* ContactPage_form_email */}
-                    <div className="ContactPage-form-email">
-                        <label htmlFor="email">Adresse email</label>
-                        <input
-                            type="text"
-                            className="ContactPage-form-input"
-                            {...register("email", {
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i,
-                                    message:
-                                        "Merci de renseigner un email valide",
-                                },
-                            })}
-                            placeholder="Email"
-                        />
-                    </div>
-                    {/* Affichage des erreurs pour le champ email */}
-                    {errors.email && (
-                        <span className="ContactForm-error">
-                            {errors.email.message}
-                        </span>
-                    )}
-
-                    {/* ContactPage_form_phonenumber */}
-                    <div className="ContactPage-form-phonenumber">
-                        <label htmlFor="phonenumber">Numéro de téléphone</label>
-                        <input
-                            type="text"
-                            className="ContactPage-form-input"
-                            {...register("phoneNumbers", {
-                                required: "Ce champ est requis",
-                                pattern: {
-                                    value: /^(0|\+33)?[1-9][0-9]{8}$/,
-                                    message:
-                                        "Merci de renseigner un numéro de téléphone valide",
-                                },
-                            })}
-                            placeholder="Numéro ..."
-                        />
-                    </div>
-                    {/* Affichage des erreurs pour le champ phonenumber */}
-                    {errors.phoneNumbers && (
-                        <span className="ContactForm-error">
-                            {errors.phoneNumbers.message}
-                        </span>
-                    )}
 
                     <button className="ContactPage-form-button" type="submit">
                         Commencer
