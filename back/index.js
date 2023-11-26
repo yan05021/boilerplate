@@ -13,26 +13,26 @@ const port = 8000;
 
 const app = express();
 
-// pour parser le corps de la requête en JSON
-app.use(express.json());
-
 //Cet exemple illustre une fonction middleware sans chemin de montage. La fonction est exécutée à chaque fois que l’application reçoit une demande.
 app.use(function (req, res, next) {
     // console.log(req.body)
-    // console.log(req.body.lastName);
-    const lastName = req.body.lastName;
 
-    const date = new Date().toLocaleDateString("en-GB");
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // Les mois commencent à 0, ajoute 1
+    const year = today.getFullYear();
+
+    const formattedDate = `${year}-${month}-${day}`;
 
     const reqMethod = req.method;
     // console.log(reqMethod);
-    const logContent = date + " - " + reqMethod;
-    const logName = date + "-" + lastName + "-log.txt";
+    const logContent = formattedDate + " - " + reqMethod;
+    const logName = formattedDate + "-api-log.txt";
     console.log(logContent);
     console.log(logName);
 
-    //création du ficher , mais ou ajoute le chemin pour y mettre?
-    fs.appendFile("nouveauFichier.txt", "Mon contenu", function (err) {
+    //création du ficher
+    fs.appendFile(`logs/${logName}`, logContent, function (err) {
         if (err) throw err;
         console.log("Fichier créé !");
     });

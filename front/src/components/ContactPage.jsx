@@ -92,13 +92,14 @@ function ContactPage() {
                                 })}
                                 placeholder="Nom ..."
                             />
+
+                            {/* Affichage des erreurs pour le champ lastname */}
+                            {errors.lastName && (
+                                <span className="ContactForm-error">
+                                    {errors.lastName.message}
+                                </span>
+                            )}
                         </div>
-                        {/* Affichage des erreurs pour le champ lastname */}
-                        {errors.lastName && (
-                            <span className="ContactForm-error">
-                                {errors.lastName.message}
-                            </span>
-                        )}
 
                         {/* ContactPage_form_firstname */}
                         <div className="ContactPage-form-firstname">
@@ -117,18 +118,18 @@ function ContactPage() {
                                 })}
                                 placeholder="Prénom ..."
                             />
+                            {/* Affichage des erreurs pour le champ firstname */}
+                            {errors.firstName && (
+                                <span className="ContactForm-error">
+                                    {errors.firstName.message}
+                                </span>
+                            )}
                         </div>
-                        {/* Affichage des erreurs pour le champ firstname */}
-                        {errors.firstName && (
-                            <span className="ContactForm-error">
-                                {errors.firstName.message}
-                            </span>
-                        )}
                     </div>
 
                     <div className="job-area">
                         {/* ContactPage_form_jobtitle */}
-                        <div className="ContactPage-form-lastname">
+                        <div className="ContactPage-form-job">
                             <label htmlFor="jobtitle">Votre poste</label>
                             <br />
                             <input
@@ -144,13 +145,13 @@ function ContactPage() {
                                 })}
                                 placeholder="Intitulé poste ..."
                             />
+                            {/* Affichage des erreurs pour le champ jobtitle */}
+                            {errors.job && (
+                                <span className="ContactForm-error">
+                                    {errors.job.message}
+                                </span>
+                            )}
                         </div>
-                        {/* Affichage des erreurs pour le champ jobtitle */}
-                        {errors.job && (
-                            <span className="ContactForm-error">
-                                {errors.job.message}
-                            </span>
-                        )}
                     </div>
                     <div className="contact-options-area">
                         {/* ContactPage_form_email */}
@@ -170,13 +171,13 @@ function ContactPage() {
                                 })}
                                 placeholder="Email"
                             />
+                            {/* Affichage des erreurs pour le champ email */}
+                            {errors.email && (
+                                <span className="ContactForm-error">
+                                    {errors.email.message}
+                                </span>
+                            )}
                         </div>
-                        {/* Affichage des erreurs pour le champ email */}
-                        {errors.email && (
-                            <span className="ContactForm-error">
-                                {errors.email.message}
-                            </span>
-                        )}
 
                         {/* ContactPage_form_phonenumber */}
                         <div className="ContactPage-form-phonenumber">
@@ -197,18 +198,19 @@ function ContactPage() {
                                 })}
                                 placeholder="Numéro ..."
                             />
+                            {/* Affichage des erreurs pour le champ phonenumber */}
+                            {errors.phoneNumbers && (
+                                <span className="ContactForm-error">
+                                    {errors.phoneNumbers.message}
+                                </span>
+                            )}
                         </div>
-                        {/* Affichage des erreurs pour le champ phonenumber */}
-                        {errors.phoneNumbers && (
-                            <span className="ContactForm-error">
-                                {errors.phoneNumbers.message}
-                            </span>
-                        )}
                     </div>
-
-                    <button className="ContactPage-form-button" type="submit">
-                        Commencer
-                    </button>
+                    <div className="ContactPage-form-button">
+                        <button id="start-button" type="submit">
+                            Commencer
+                        </button>
+                    </div>
                 </form>
             </div>
         </>

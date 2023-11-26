@@ -19,8 +19,8 @@ body {
     padding: 24px;
     background-color: #fff;
     margin: auto;
-    margin-top: 6%;
-    min-height: 80vh;
+    margin-top: 2%;
+    min-height: 65vh;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -124,9 +124,22 @@ body {
             line-height: normal;
         }
     }
+    .ContactForm-error {
+        font-family: Poppins;
+        font-size: 14px;
+        color: red;
+    }
     .name-area {
         display: flex;
         justify-content: space-between;
+    }
+    .ContactPage-form-lastname,
+    .ContactPage-form-firstname,
+    .ContactPage-form-job
+        .ContactPage-form-email
+        .ContactPage-form-phonenumber {
+        display: flex;
+        flex-direction: column;
     }
     .contact-options-area {
         display: flex;
@@ -135,9 +148,35 @@ body {
 }
 
 .ContactPage-form-button {
-    position: fixed;
-    bottom: 0px;
-    padding: 10px 24px;
-    border-radius: 100px;
-    background: #505fee;
+    display: flex;
+    justify-content: center;
+    #start-button {
+        position: relative;
+        bottom: -90px;
+        padding: 10px 24px;
+        border-radius: 100px;
+        background: #505fee;
+        border: none;
+
+        color: #fff;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ContactPage {
+        width: 470px;
+    }
+    .ContactPage-form {
+        .name-area,
+        .contact-options-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
 }
