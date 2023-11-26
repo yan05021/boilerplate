@@ -1,0 +1,15 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Votre objectif consiste à intégrer la maquette du formulaire joint en une application fonctionnelle en utilisant Node.js sous forme d'API RESTful, avec une interface utilisateur en React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-hook-form": "^7.48.2"
+  }
+}

@@ -1,0 +1,182 @@
+//style 0
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.ContactPage {
+    width: 821px;
+    padding: 24px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 2%;
+    min-height: 65vh;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ContactPage-info-caution {
+    background-color: #eeeffe;
+    display: flex;
+    gap: 3%;
+    padding: 2%;
+    border-radius: 10px;
+    color: var(--primary-blue-impact, #505fee);
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    #text-date {
+        padding-top: 10px;
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+.ContactPage-info-update {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    span {
+        color: #171725;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.1px;
+    }
+    .update-elements {
+        color: var(--grey-4, #746f7c);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        ul {
+            list-style-position: inside;
+            padding: 0;
+            li {
+                padding-top: 16px;
+            }
+        }
+    }
+}
+
+.solide {
+    width: 773px;
+    height: 1px;
+}
+
+.ContactPage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    span {
+        color: #171725;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.1px;
+    }
+
+    label {
+        color: var(--primary-variations-dark, #1c243d);
+
+        /* Regular Family/14. Regular */
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    input {
+        border-radius: 6px;
+        border: 1px solid var(--grey-6, #eceef4);
+        background: var(--background-white, #fff);
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+        padding: 12px 16px;
+        width: 43vh;
+
+        ::placeholder {
+            color: var(--secondary-cloudy-grey, #746f7c);
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    .ContactForm-error {
+        font-family: Poppins;
+        font-size: 14px;
+        color: red;
+    }
+    .name-area {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ContactPage-form-lastname,
+    .ContactPage-form-firstname,
+    .ContactPage-form-job
+        .ContactPage-form-email
+        .ContactPage-form-phonenumber {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-options-area {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.ContactPage-form-button {
+    display: flex;
+    justify-content: center;
+    #start-button {
+        position: relative;
+        bottom: -90px;
+        padding: 10px 24px;
+        border-radius: 100px;
+        background: #505fee;
+        border: none;
+
+        color: #fff;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ContactPage {
+        width: 470px;
+    }
+    .ContactPage-form {
+        .name-area,
+        .contact-options-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+}
